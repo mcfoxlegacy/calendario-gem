@@ -7,21 +7,15 @@ module Taxcalendario
   module Client
     class BasicClient
       
+      attr_accessor :access_token
+      attr_accessor :base_url
+      attr_accessor :http_client
+      
       # Constructor
       def initialize
-        @base_url = "http://localhost:3000/api/v1"
-        @access_token = nil
-        @http_client = HTTPClient.new
-      end
-      
-      # Define base URL for API access
-      def set_base_url(base_url)
-        @base_url = base_url
-      end
-      
-      # Define API Token
-      def set_access_token(token)
-        @access_token = token
+        self.base_url = "http://localhost:3000/api/v1"
+        self.access_token = nil
+        self.http_client = HTTPClient.new
       end
       
       # New entity. Override this in children classes.
@@ -31,7 +25,7 @@ module Taxcalendario
       
       # Get entity by id
       def get(id)
-        json = @http_client.get_content "#{@base_url}#{@service_base_path}/#{id}.json"
+        json = @http_client.get_content "#{@base_url}#{@service_base_path}/#{id}.json", :api_key => self.access_token
         ne = new_entity
         ne.from_hash(JSON.parse(json))
         ne
@@ -43,7 +37,7 @@ module Taxcalendario
           if params == nil
             params = Hash.new
           end
-          params[:api_key] = @access_token
+          params[:api_key] = self.access_token
           json = @http_client.get_content "#{@base_url}#{@service_base_path}/#{additional_path}.json", params
           json
         end
@@ -55,7 +49,7 @@ module Taxcalendario
           if params == nil
             params = Hash.new
           end
-          params[:api_key] = @access_token
+          params[:api_key] = self.access_token
           json = @http_client.get_content "#{@base_url}#{@service_base_path}/list.json", params
           rtn = []
           JSON.parse(json).each do |obj_hash|

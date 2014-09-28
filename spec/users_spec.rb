@@ -1,20 +1,25 @@
+require 'factory_girl'
 require 'taxcalendario/client'
+require 'support/factory_girl.rb'
+
+# Include FactoryGirl module
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
+
+# Test user API client
 describe "User service API Client" do
+  
   it "shoud return a list of user" do
-    userapi = Taxcalendario::Client::UserService.new
-    userapi.set_access_token("b87bd510368c438de6c9d6392bce1669")
+    userapi = build(:user_service)
     lu = userapi.list
-    lu.each do |user|
-      puts user.name
-    end
     lu.count > 0
   end
   
-  it "shoud return the id of token user" do
-    userapi = Taxcalendario::Client::UserService.new
-    userapi.set_access_token("b87bd510368c438de6c9d6392bce1669")
-    i = userapi.meu_id
-    puts "My id is #{i.to_s}"
-    i > 0
+  it "shoud return the my id and my complete register" do
+    userapi = build(:user_service)
+    id = userapi.meu_id
+    reg = userapi.get(id)
+    reg.email != nil
   end
 end
