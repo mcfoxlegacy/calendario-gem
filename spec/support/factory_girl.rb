@@ -5,12 +5,17 @@ FactoryGirl.define do
   
   # Factory of User API client
   factory :user_service, class: Taxcalendario::Client::UserService do
-    access_token "5bca3fb811728b1da47f2dc0167bec3d" 
+    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
   end
   
-    # Factory of Account API client
+  # Factory of Obrigacao API client
+  factory :obrigacao_service, class: Taxcalendario::Client::ObrigacaoService do
+    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
+  end
+  
+  # Factory of Account API client
   factory :conta_service, class: Taxcalendario::Client::ContaService do
-    access_token "5bca3fb811728b1da47f2dc0167bec3d" 
+    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
   end
   
   # Factory of User entity
@@ -36,5 +41,30 @@ FactoryGirl.define do
       simples_nacional  false
       mei               false
   end
+  
+    # Factory of Establishment entity
+  factory :obrigacao, class: Taxcalendario::Client::Entities::Obrigacao do  
+      nome                              "Nome da obrigacao"
+      descricao                         "Descricao da obrigacao"
+      periodicidade                     "MENSAL"
+      obrigatoriedade                   "Texto da obrigatoriedade"
+      ambito                            "FEDERAL"
+      legislacao                        "Texto da legislacao"
+      entrega_por_dia_util              true
+      posterga_em_dia_nao_util          true
+      dia_entrega                       10
+      meses_entrega                     9
+      meses_defasagem_competencia       1
+      cnaes                             "34324324"
+      apuracao_lucro                    "REAL" 
+      exigido_para_simples_nacional     true
+      exigido_para_mei                  true
+      estados                           "*"
+      municipios                        "*"
+      dt_fim                            "2025-01-01"
+      dt_inicio                         "2012-01-01"
+      msaf_codigo                       "SAFX.EXE"
+  end
+    
     
 end
