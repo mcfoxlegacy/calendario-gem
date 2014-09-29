@@ -13,14 +13,14 @@ describe "User service API Client" do
   it "shoud return a list of user" do
     userapi = build(:user_service)
     lu = userapi.list
-    lu.count > 0
+    expect(lu.count).to be > 0
   end
   
   it "shoud return the my id and my complete register" do
     userapi = build(:user_service)
     id = userapi.meu_id
     reg = userapi.get(id)
-    reg.email != nil
+    expect(reg.email).not_to eq (nil)
   end
   
   it "shoud don't create a new user because this not include a account" do
@@ -30,7 +30,7 @@ describe "User service API Client" do
       nu = userapi.add(user)
       nu.id == nil
     rescue
-      true
+      expect(true).to eq (true)
     end
   end
   
@@ -47,6 +47,7 @@ describe "User service API Client" do
     end
     user.conta_id = conta_id
     nu = userapi.add(user)
+    expect(nu.id).not_to eq (nil)
   end
   
   it "shoud update the previosly created user" do
@@ -54,7 +55,7 @@ describe "User service API Client" do
     list_users = userapi.list_by_email(build(:user).email)
     list_users[0].role = 1
     nu = userapi.update(list_users[0])
-    nu.role == 1
+    expect(nu.role).to eq (1)
   end
   
   it "shoud delete the previosly created user" do
@@ -62,7 +63,7 @@ describe "User service API Client" do
     list_users = userapi.list_by_email(build(:user).email)
     userapi.delete(list_users[0])
     list_users = userapi.list_by_email(build(:user).email)
-    list_users.empty?
+    expect(list_users.empty?).to eq (true)
   end
   
 end
