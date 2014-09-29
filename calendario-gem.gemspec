@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'taxcalendario/client/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "taxcalendario-client"
+  spec.name          = "calendario-gem"
   spec.version       = Taxcalendario::Client::VERSION
   spec.authors       = ["Franklin Ronald"]
   spec.email         = ["franklin@wiselabs.com.br"]
