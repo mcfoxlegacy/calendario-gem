@@ -23,7 +23,7 @@ module Taxcalendario
       def get(id)
         json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}/#{id}.json", :api_key => self.access_token
         ne = new_entity
-        ne.from_hash(JSON.parse(json))
+        ne.from_hash(JSON.parse(trata_erro(json)))
         ne
       end
       
@@ -31,7 +31,7 @@ module Taxcalendario
       def get(id)
         json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}/#{id}.json", :api_key => self.access_token
         ne = new_entity
-        ne.from_hash(JSON.parse(json))
+        ne.from_hash(JSON.parse(trata_erro(json)))
         ne
       end
       
@@ -40,14 +40,20 @@ module Taxcalendario
         params = entity.to_hash
         httpresp = self.http_client.post "#{self.base_url}#{self.service_base_path}.json?api_key=#{self.access_token}", params
         json = httpresp.content
+        trata_erro(json)
+        ne = new_entity
+        ne.from_hash(JSON.parse(json))
+        ne
+      end
+      
+      def trata_erro(json)
         if json.include?("\"error\":")
           em = Taxcalendario::Client::Entities::ErrorMessage.new
           em.from_hash(JSON.parse(json))
           raise em.error
+        else
+          json
         end
-        ne = new_entity
-        ne.from_hash(JSON.parse(json))
-        ne
       end
       
       # Add a register
@@ -55,11 +61,7 @@ module Taxcalendario
         params = entity.to_hash
         httpresp = self.http_client.put "#{self.base_url}#{self.service_base_path}.json?api_key=#{self.access_token}", params
         json = httpresp.content
-        if json.include?("\"error\":")
-          em = Taxcalendario::Client::Entities::ErrorMessage.new
-          em.from_hash(JSON.parse(json))
-          raise em.error
-        end
+        trata_erro(json)
         ne = new_entity
         ne.from_hash(JSON.parse(json))
         ne
@@ -69,11 +71,7 @@ module Taxcalendario
       def delete(entity)
         httpresp = self.http_client.delete "#{self.base_url}#{self.service_base_path}.json?id=#{entity.id}&api_key=#{self.access_token}"
         json = httpresp.content
-        if json.include?("\"error\":")
-          em = Taxcalendario::Client::Entities::ErrorMessage.new
-          em.from_hash(JSON.parse(json))
-          raise em.error
-        end
+        trata_erro(json)
         true
       end
       
@@ -85,7 +83,35 @@ module Taxcalendario
           end
           params[:api_key] = self.access_token
           json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}/#{additional_path}.json", params
-          json
+          trata_erro(json)
+        end
+      end
+      
+      # Get path and return a json
+      def delete_and_give_me_a_json(additional_path, params = nil)
+        if self.service_base_path != nil
+          if params == nil
+            params = Hash.new
+          end
+          params[:api_key] = self.access_token
+          message = self.http_client.delete "#{self.base_url}#{self.service_base_path}/#{additional_path}.json", params
+          trata_erro(message.content)
+        end
+      end
+      
+      # Post in path and return a json
+      def post_and_give_me_a_json(additional_path, entity)
+        if self.service_base_path != nil
+          message = self.http_client.post "#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}", entity.to_hash
+          trata_erro(message.content)
+        end
+      end
+      
+      # Put in path and return a json
+      def put_and_give_me_a_json(additional_path, entity)
+        if self.service_base_path != nil
+          message = self.http_client.put "#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}", entity.to_hash
+          trata_erro(message.content)
         end
       end
       
@@ -97,6 +123,7 @@ module Taxcalendario
           end
           params[:api_key] = self.access_token
           json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}/list.json", params
+          trata_erro(json)
           rtn = []
           JSON.parse(json).each do |obj_hash|
             ne = new_entity
