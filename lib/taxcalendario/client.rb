@@ -113,6 +113,41 @@ module Taxcalendario
         rtn
       end
       
+      # Adiciona uma responsabilidade
+      def add_responsabilidade(conta_id, estabelecimento_id, responsabilidade)
+        
+      end
+      
+      # Remove uma responsabilidade
+      def delete_responsabilidade(conta_id, estabelecimento_id, user_id, obrigacao_id)
+        
+      end
+      
+      # Responsabilidades registradas em um estabelecimento
+      def responsabilidades_estabelecimento(conta_id, estabelecimento_id, user_id)
+        
+      end
+      
+      # Lista todas as obrigacoes de um estabelecimento
+      def list_obrigacoes(conta_id, estabelecimento_id)
+        
+      end
+      
+      # Adiciona uma obrigacao a um estabelecimento
+      def add_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)
+        
+      end
+      
+      # Atualiza uma obrigacao
+      def update_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)
+        
+      end
+      
+      # Remove obrigacao
+      def delete_obrigacao(conta_id, estabelecimento_id, obrigacao_id)
+        
+      end
+      
       # Retorna estabelecimentos
       def estabelecimentos(conta_id)
         list = JSON.parse(get_and_give_me_a_json("/estabelecimentos/#{conta_id}"))
@@ -152,6 +187,31 @@ module Taxcalendario
         obj = Taxcalendario::Client::Entities::Estabelecimento.new
         obj.from_hash(map)
         obj
+      end
+      
+      # Lista entregas
+      def list_entregas(conta_id, estabelecimento_id, obrigacao_id)
+        
+      end
+      
+      # Pega entrega por id
+      def get_entrega(conta_id, entrega_id)
+        
+      end
+      
+      # Atualiza entrega
+      def update_entrega(conta_id, estabelecimento)
+        
+      end
+      
+      # Deleta entrega
+      def delete_entrega(entrega_id)
+        
+      end
+      
+      # Adiciona um arquivo a uma entrega
+      def add_arquivo_entrega(entrega_id, arquivo)
+      
       end
       
     end

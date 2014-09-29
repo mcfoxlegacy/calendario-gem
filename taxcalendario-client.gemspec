@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["franklin@wiselabs.com.br"]
   spec.summary       = "Cliente da API TaxWeb Calendarioo"
   spec.description   = "Cliente REST para a API v1 do TaxWeb Calendario na nuvem."
-  spec.homepage      = ""
+  spec.homepage      = "http://www.taxweb.com.br"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

@@ -107,6 +107,20 @@ module Taxcalendario
         attr_accessor :mei
       end
       
+      # Entrega
+      class Entrega < BaseEntity
+        attr_accessor :id
+        attr_accessor :conta_id
+        attr_accessor :estabelecimento_id
+        attr_accessor :obrigacao_id
+        attr_accessor :competencia
+        attr_accessor :dt_prevista
+        attr_accessor :dt_entrega
+        attr_accessor :user_id
+        attr_accessor :created_at
+        attr_accessor :updated_at
+      end
+      
       # Obligation entity
       class ErrorMessage < BaseEntity
         attr_accessor :error
