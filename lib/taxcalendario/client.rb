@@ -59,7 +59,20 @@ module Taxcalendario
       def initialize
         self.service_base_path = "/obrigacao"
         super
-      end
+      end   
+      
+      # Nova instancia da entidade padrao deste servico
+      def new_entity
+        Taxcalendario::Client::Entities::Obrigacao.new
+      end    
+      
+      # Lista obricacoes filtrando por nome
+      def list_by_nome(nome)
+        params = Hash.new
+        params[:nome] = nome
+        self.list(params)
+      end  
+      
     end
     
     # Conta service API client
@@ -130,22 +143,34 @@ module Taxcalendario
       
       # Lista todas as obrigacoes de um estabelecimento
       def list_obrigacoes(conta_id, estabelecimento_id)
-        
+
       end
       
       # Adiciona uma obrigacao a um estabelecimento
       def add_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)
-        
+        obest = Taxcalendario::Client::Entities::ObrigacaoEstabelecimento.new
+        obest.dia_entrega = dia_entrega
+        obest.obrigacao_id = obrigacao_id
+        map = JSON.parse(post_and_give_me_a_json("/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}",obest))     
+        obj = Taxcalendario::Client::Entities::Obrigacao.new
+        obj.from_hash(map)
+        obj
       end
       
       # Atualiza uma obrigacao
       def update_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)
-        
+        obest = Taxcalendario::Client::Entities::ObrigacaoEstabelecimento.new
+        obest.dia_entrega = dia_entrega
+        obest.obrigacao_id = obrigacao_id
+        map = JSON.parse(put_and_give_me_a_json("/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}",obest))     
+        obj = Taxcalendario::Client::Entities::Obrigacao.new
+        obj.from_hash(map)
+        obj
       end
       
       # Remove obrigacao
       def delete_obrigacao(conta_id, estabelecimento_id, obrigacao_id)
-        
+         delete_and_give_me_a_json("estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}/#{obrigacao_id}")
       end
       
       # Retorna estabelecimentos

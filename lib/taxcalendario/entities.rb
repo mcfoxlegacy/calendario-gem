@@ -59,12 +59,34 @@ module Taxcalendario
       class Obrigacao < BaseEntity
         attr_accessor :id
         attr_accessor :nome
+        attr_accessor :descricao
+        attr_accessor :periodicidade
+        attr_accessor :obrigatoriedade
+        attr_accessor :ambito
+        attr_accessor :legislacao
         attr_accessor :created_at
         attr_accessor :updated_at
-        attr_accessor :responsavel_id
-        attr_accessor :ativa
-        attr_accessor :demonstracao
+        attr_accessor :entrega_por_dia_util
+        attr_accessor :posterga_em_dia_nao_util
+        attr_accessor :dia_entrega
+        attr_accessor :meses_entrega
+        attr_accessor :meses_defasagem_competencia
+        attr_accessor :cnaes
+        attr_accessor :apuracao_lucro
+        attr_accessor :exigido_para_simples_nacional
+        attr_accessor :exigido_para_mei
+        attr_accessor :estados
+        attr_accessor :municipios
+        attr_accessor :dt_fim
+        attr_accessor :dt_inicio
+        attr_accessor :msaf_codigo
       end
+      
+      # ObrigacaoEstabelecimento
+      class ObrigacaoEstabelecimento < BaseEntity
+        attr_accessor :obrigacao_id
+        attr_accessor :dia_entrega
+      end    
       
       # Conta User
       class ContaUser < BaseEntity
