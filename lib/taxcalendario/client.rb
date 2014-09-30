@@ -143,7 +143,14 @@ module Taxcalendario
       
       # Lista todas as obrigacoes de um estabelecimento
       def list_obrigacoes(conta_id, estabelecimento_id)
-
+        list_contas = JSON.parse(get_and_give_me_a_json("/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}/list"))
+        rtn = []
+        list_contas.each do |u_map|
+          obrig = Taxcalendario::Client::Entities::Obrigacao.new
+          obrig.from_hash(u_map)
+          rtn << obrig
+        end
+        rtn
       end
       
       # Adiciona uma obrigacao a um estabelecimento
@@ -152,7 +159,7 @@ module Taxcalendario
         obest.dia_entrega = dia_entrega
         obest.obrigacao_id = obrigacao_id
         map = JSON.parse(post_and_give_me_a_json("/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}",obest))     
-        obj = Taxcalendario::Client::Entities::Obrigacao.new
+        obj = Taxcalendario::Client::Entities::ObrigacaoEstabelecimento.new
         obj.from_hash(map)
         obj
       end
@@ -160,10 +167,10 @@ module Taxcalendario
       # Atualiza uma obrigacao
       def update_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)
         obest = Taxcalendario::Client::Entities::ObrigacaoEstabelecimento.new
-        obest.dia_entrega = dia_entrega
         obest.obrigacao_id = obrigacao_id
+        obest.dia_entrega = dia_entrega
         map = JSON.parse(put_and_give_me_a_json("/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}",obest))     
-        obj = Taxcalendario::Client::Entities::Obrigacao.new
+        obj = Taxcalendario::Client::Entities::ObrigacaoEstabelecimento.new
         obj.from_hash(map)
         obj
       end
@@ -201,7 +208,7 @@ module Taxcalendario
         obj
       end
       
-      # Retorna estabelecimento por id
+      # Deleta estabelecimento
       def delete_estabelecimento(estabelecimento)
         delete_and_give_me_a_json("/estabelecimentos/#{estabelecimento.conta_id}/#{estabelecimento.id}")
       end

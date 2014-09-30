@@ -73,6 +73,75 @@ describe "Accounts service API Client" do
     end
     expect(retorno.mei).to eq (true)
   end
+    
+  it "shoud create an obrigacao" do
+    obrigacaoapi = build(:obrigacao_service)
+    obrigacao = build(:obrigacao)
+    no = obrigacaoapi.add(obrigacao)
+    expect(no.id).not_to eq (nil)
+  end
+  
+  it "should add an obrigacao on establishment" do
+    obrigacaoapi = build(:obrigacao_service)
+    obrigacao_id = obrigacaoapi.list_by_nome(build(:obrigacao).nome)[0].id
+    
+    contaapi = build(:conta_service)
+    conta_id = contaapi.list[0].id
+    estabelecimento_id = contaapi.estabelecimentos(conta_id)[0].id
+    
+  
+    dia_entrega=10;   
+    
+    retorno = contaapi.add_obrigacao(conta_id, estabelecimento_id, obrigacao_id, dia_entrega) 
+    expect(retorno.id).not_to eq (nil)
+  end
+  
+  it "should list and update the previosly created obrigacao" do
+    contaapi = build(:conta_service)
+    obrigacaoservice = build(:obrigacao_service)
+    conta_id = contaapi.list[0].id
+    estabelecimento_id = contaapi.estabelecimentos(conta_id)[0].id
+    
+    obrig_ref = build(:obrigacao)
+    obrig_ref = obrigacaoservice.list_by_nome(obrig_ref.nome)[0];
+    
+    retorno = nil
+    contaapi.list_obrigacoes(conta_id, estabelecimento_id).each do |obrig|
+      if obrig.obrigacao_id == obrig_ref.id
+        retorno = contaapi.update_obrigacao(conta_id, estabelecimento_id, obrig.obrigacao_id, 20)
+        break
+      end
+    end
+    expect(retorno.dia_entrega).to eq (20)
+  end
+  
+  it "should list and delete the previosly created establishment" do
+    contaapi = build(:conta_service)
+    obrigacaoservice = build(:obrigacao_service)
+    conta_id = contaapi.list[0].id
+    estabelecimento_id = contaapi.estabelecimentos(conta_id)[0].id
+    
+    obrig_ref = build(:obrigacao)
+    obrig_ref = obrigacaoservice.list_by_nome(obrig_ref.nome)[0];
+    
+    retorno = false
+    contaapi.list_obrigacoes(conta_id, estabelecimento_id).each do |obrig|
+      if obrig.obrigacao_id == obrig_ref.id
+        contaapi.delete_obrigacao(conta_id, estabelecimento_id, obrig_ref.id)
+        retorno = true
+        break
+      end
+    end
+    expect(retorno).to eq (true)
+  end
+  
+  it "shoud delete the previosly created obrigacao" do
+    obrigacaoapi = build(:obrigacao_service)
+    list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
+    obrigacaoapi.delete(list_obrigacaos[0])
+    list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
+    expect(list_obrigacaos.empty?).to eq (true)
+  end
   
   it "should list and delete the previosly created establishment" do
     contaapi = build(:conta_service)
@@ -86,13 +155,6 @@ describe "Accounts service API Client" do
       end
     end
     expect(retorno).to eq (true)
-  end
-  
-  it "should returns a array of responsabilities" do
-    #TODO: Test with data
-    userapi = build(:user_service)
-    contaapi = build(:conta_service)
-    contaapi.responsabilidades(contaapi.list[0].id,userapi.meu_id)
   end
   
 end

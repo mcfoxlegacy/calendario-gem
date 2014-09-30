@@ -84,7 +84,11 @@ module Taxcalendario
       
       # ObrigacaoEstabelecimento
       class ObrigacaoEstabelecimento < BaseEntity
+        attr_accessor :id
+        attr_accessor :estabelecimento_id
         attr_accessor :obrigacao_id
+        attr_accessor :created_at
+        attr_accessor :updated_at
         attr_accessor :dia_entrega
       end    
       
