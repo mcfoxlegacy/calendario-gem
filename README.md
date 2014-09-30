@@ -20,6 +20,7 @@ Ou instale manualmente com o comando:
 
 ## Exemplo de uso
 
+```ruby
 require 'taxcalendario/client'
 
 user_api = Taxcalendario::Client::UserService.new
@@ -27,6 +28,7 @@ user_api.access_token = "COLOQUE_AQUI_SEU_TOKEN"
 user_api.contas.each do |conta|
     puts conta.nome
 end
+```
 
 ## Documentação
 
