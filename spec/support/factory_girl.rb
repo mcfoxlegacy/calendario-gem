@@ -5,17 +5,17 @@ FactoryGirl.define do
   
   # Factory of User API client
   factory :user_service, class: Taxcalendario::Client::UserService do
-    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
+    access_token "6f509af40805825a088a5972b2775492 " 
   end
   
   # Factory of Obrigacao API client
   factory :obrigacao_service, class: Taxcalendario::Client::ObrigacaoService do
-    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
+    access_token "6f509af40805825a088a5972b2775492 " 
   end
   
   # Factory of Account API client
   factory :conta_service, class: Taxcalendario::Client::ContaService do
-    access_token "346f9dc531c6e13fb91439ca94e4cac3" 
+    access_token "6f509af40805825a088a5972b2775492 " 
   end
   
   # Factory of User entity
