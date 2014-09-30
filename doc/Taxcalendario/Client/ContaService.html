@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Taxcalendario::Client::ContaService - RDoc Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="BasicClient.html">Taxcalendario::Client::BasicClient</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_arquivo_entrega">#add_arquivo_entrega</a>
+    
+    <li ><a href="#method-i-add_entrega">#add_entrega</a>
+    
+    <li ><a href="#method-i-add_estabelecimento">#add_estabelecimento</a>
+    
+    <li ><a href="#method-i-add_obrigacao">#add_obrigacao</a>
+    
+    <li ><a href="#method-i-add_responsabilidade">#add_responsabilidade</a>
+    
+    <li ><a href="#method-i-add_user">#add_user</a>
+    
+    <li ><a href="#method-i-delete_entrega">#delete_entrega</a>
+    
+    <li ><a href="#method-i-delete_estabelecimento">#delete_estabelecimento</a>
+    
+    <li ><a href="#method-i-delete_obrigacao">#delete_obrigacao</a>
+    
+    <li ><a href="#method-i-delete_responsabilidade">#delete_responsabilidade</a>
+    
+    <li ><a href="#method-i-estabelecimento">#estabelecimento</a>
+    
+    <li ><a href="#method-i-estabelecimentos">#estabelecimentos</a>
+    
+    <li ><a href="#method-i-estabelecimentos_by_cnpj">#estabelecimentos_by_cnpj</a>
+    
+    <li ><a href="#method-i-get_entrega">#get_entrega</a>
+    
+    <li ><a href="#method-i-list_entregas">#list_entregas</a>
+    
+    <li ><a href="#method-i-list_obrigacoes">#list_obrigacoes</a>
+    
+    <li ><a href="#method-i-new_entity">#new_entity</a>
+    
+    <li ><a href="#method-i-responsabilidades">#responsabilidades</a>
+    
+    <li ><a href="#method-i-responsabilidades_estabelecimento">#responsabilidades_estabelecimento</a>
+    
+    <li ><a href="#method-i-update_entrega">#update_entrega</a>
+    
+    <li ><a href="#method-i-update_estabelecimento">#update_estabelecimento</a>
+    
+    <li ><a href="#method-i-update_obrigacao">#update_obrigacao</a>
+    
+    <li ><a href="#method-i-users_list">#users_list</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Taxcalendario::Client::ContaService">
+  <h1 id="class-Taxcalendario::Client::ContaService" class="class">
+    class Taxcalendario::Client::ContaService
+  </h1>
+
+  <section class="description">
+    
+<p>Conta service API client</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Construtor</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="BasicClient.html#method-c-new">Taxcalendario::Client::BasicClient.new</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> = <span class="ruby-string">&quot;/conta&quot;</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_arquivo_entrega" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_arquivo_entrega</span><span
+            class="method-args">(entrega_id, arquivo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona um arquivo a uma entrega</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_arquivo_entrega-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_arquivo_entrega</span>(<span class="ruby-identifier">entrega_id</span>, <span class="ruby-identifier">arquivo</span>)
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_entrega" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_entrega</span><span
+            class="method-args">(conta_id, entrega)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona entrega</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_entrega-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_entrega</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">entrega</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">post_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/entregas/#{conta_id}/#{entrega.estabelecimento_id}&quot;</span>, <span class="ruby-identifier">entrega</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Entrega</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_estabelecimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_estabelecimento</span><span
+            class="method-args">(estabelecimento)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna estabelecimentos</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_estabelecimento-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_estabelecimento</span>(<span class="ruby-identifier">estabelecimento</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">post_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/#{estabelecimento.conta_id}&quot;</span>,<span class="ruby-identifier">estabelecimento</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Estabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_obrigacao" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_obrigacao</span><span
+            class="method-args">(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona uma obrigacao a um estabelecimento</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_obrigacao-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_obrigacao</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">obrigacao_id</span>, <span class="ruby-identifier">dia_entrega</span>)
+  <span class="ruby-identifier">obest</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">ObrigacaoEstabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obest</span>.<span class="ruby-identifier">dia_entrega</span> = <span class="ruby-identifier">dia_entrega</span>
+  <span class="ruby-identifier">obest</span>.<span class="ruby-identifier">obrigacao_id</span> = <span class="ruby-identifier">obrigacao_id</span>
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">post_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}&quot;</span>,<span class="ruby-identifier">obest</span>))     
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">ObrigacaoEstabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_responsabilidade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_responsabilidade</span><span
+            class="method-args">(conta_id, estabelecimento_id, responsabilidade)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona uma responsabilidade</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_responsabilidade-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_responsabilidade</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">responsabilidade</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_user</span><span
+            class="method-args">(conta_id, user, role)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna os usuarios</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_user-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_user</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">role</span>)
+  <span class="ruby-identifier">cu</span> = <span class="ruby-constant">ContaUser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">cu</span>.<span class="ruby-identifier">conta_id</span> = <span class="ruby-identifier">conta_id</span>
+  <span class="ruby-identifier">cu</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">cu</span>.<span class="ruby-identifier">role</span> = <span class="ruby-identifier">role</span>
+  
+  <span class="ruby-identifier">json</span> = <span class="ruby-identifier">post_and_give_me_a_json</span>(<span class="ruby-node">&quot;/users/#{conta_id}&quot;</span>, <span class="ruby-identifier">cu</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">ContaUser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>))
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_entrega" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_entrega</span><span
+            class="method-args">(conta_id, entrega_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deleta entrega</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_entrega-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_entrega</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">entrega_id</span>)
+  <span class="ruby-identifier">delete_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/entregas/#{conta_id}/#{entrega_id}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_estabelecimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_estabelecimento</span><span
+            class="method-args">(estabelecimento)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deleta estabelecimento</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_estabelecimento-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_estabelecimento</span>(<span class="ruby-identifier">estabelecimento</span>)
+  <span class="ruby-identifier">delete_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/#{estabelecimento.conta_id}/#{estabelecimento.id}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_obrigacao" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_obrigacao</span><span
+            class="method-args">(conta_id, estabelecimento_id, obrigacao_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove obrigacao</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_obrigacao-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_obrigacao</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">obrigacao_id</span>)
+   <span class="ruby-identifier">delete_and_give_me_a_json</span>(<span class="ruby-node">&quot;estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}/#{obrigacao_id}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_responsabilidade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_responsabilidade</span><span
+            class="method-args">(conta_id, estabelecimento_id, user_id, obrigacao_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove uma responsabilidade</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_responsabilidade-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_responsabilidade</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">user_id</span>, <span class="ruby-identifier">obrigacao_id</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-estabelecimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estabelecimento</span><span
+            class="method-args">(conta_id, estabelecimento_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna estabelecimento por id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="estabelecimento-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estabelecimento</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/#{conta_id}/estabelecimentos/#{estabelecimento_id}&quot;</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Estabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-estabelecimentos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estabelecimentos</span><span
+            class="method-args">(conta_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna estabelecimentos</p>
+          
+          
+
+          
+          <div class="method-source-code" id="estabelecimentos-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estabelecimentos</span>(<span class="ruby-identifier">conta_id</span>)
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/#{conta_id}&quot;</span>))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Estabelecimento</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-estabelecimentos_by_cnpj" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">estabelecimentos_by_cnpj</span><span
+            class="method-args">(conta_id, cnpj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna estabelecimentos</p>
+          
+          
+
+          
+          <div class="method-source-code" id="estabelecimentos_by_cnpj-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">estabelecimentos_by_cnpj</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">cnpj</span>)
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/#{conta_id}&quot;</span>, {<span class="ruby-value">:cnpj</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cnpj</span>}))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Estabelecimento</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_entrega" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_entrega</span><span
+            class="method-args">(conta_id, entrega_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pega entrega por id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_entrega-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_entrega</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">entrega_id</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/entregas/#{conta_id}/#{entrega_id}&quot;</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Entrega</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_entregas" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_entregas</span><span
+            class="method-args">(conta_id, estabelecimento_id, obrigacao_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lista entregas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list_entregas-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_entregas</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">obrigacao_id</span>)
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/entregas/#{conta_id}/#{estabelecimento_id}/#{obrigacao_id}&quot;</span>))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Entrega</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_obrigacoes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_obrigacoes</span><span
+            class="method-args">(conta_id, estabelecimento_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lista todas as obrigacoes de um estabelecimento</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list_obrigacoes-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_obrigacoes</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>)
+  <span class="ruby-identifier">list_contas</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}/list&quot;</span>))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list_contas</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">u_map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">obrig</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Obrigacao</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">obrig</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">u_map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obrig</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_entity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_entity</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Nova instancia da entidade padrao deste servico</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_entity-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_entity</span>
+  <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Conta</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-responsabilidades" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">responsabilidades</span><span
+            class="method-args">(conta_id, user_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna usuarios</p>
+          
+          
+
+          
+          <div class="method-source-code" id="responsabilidades-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">responsabilidades</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">user_id</span>)
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/users/#{conta_id}/#{user_id}/responsabilidades&quot;</span>))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Responsabilidade</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-responsabilidades_estabelecimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">responsabilidades_estabelecimento</span><span
+            class="method-args">(conta_id, estabelecimento_id, user_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Responsabilidades registradas em um estabelecimento</p>
+          
+          
+
+          
+          <div class="method-source-code" id="responsabilidades_estabelecimento-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">responsabilidades_estabelecimento</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">user_id</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_entrega" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_entrega</span><span
+            class="method-args">(conta_id, entrega)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Atualiza entrega</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update_entrega-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_entrega</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">entrega</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">put_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/entregas/#{conta_id}/#{entrega.estabelecimento_id}&quot;</span>, <span class="ruby-identifier">entrega</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Entrega</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_estabelecimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_estabelecimento</span><span
+            class="method-args">(estabelecimento)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Atualiza um estabelecimento</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update_estabelecimento-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_estabelecimento</span>(<span class="ruby-identifier">estabelecimento</span>)
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">put_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/#{estabelecimento.conta_id}/#{estabelecimento.id}&quot;</span>,<span class="ruby-identifier">estabelecimento</span>))
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">Estabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_obrigacao" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_obrigacao</span><span
+            class="method-args">(conta_id, estabelecimento_id, obrigacao_id, dia_entrega)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Atualiza uma obrigacao</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update_obrigacao-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_obrigacao</span>(<span class="ruby-identifier">conta_id</span>, <span class="ruby-identifier">estabelecimento_id</span>, <span class="ruby-identifier">obrigacao_id</span>, <span class="ruby-identifier">dia_entrega</span>)
+  <span class="ruby-identifier">obest</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">ObrigacaoEstabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obest</span>.<span class="ruby-identifier">obrigacao_id</span> = <span class="ruby-identifier">obrigacao_id</span>
+  <span class="ruby-identifier">obest</span>.<span class="ruby-identifier">dia_entrega</span> = <span class="ruby-identifier">dia_entrega</span>
+  <span class="ruby-identifier">map</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">put_and_give_me_a_json</span>(<span class="ruby-node">&quot;/estabelecimentos/obrigacoes/#{conta_id}/#{estabelecimento_id}&quot;</span>,<span class="ruby-identifier">obest</span>))     
+  <span class="ruby-identifier">obj</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">ObrigacaoEstabelecimento</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">map</span>)
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-users_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_list</span><span
+            class="method-args">(conta_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retorna os usuarios</p>
+          
+          
+
+          
+          <div class="method-source-code" id="users_list-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/client.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_list</span>(<span class="ruby-identifier">conta_id</span>)
+  <span class="ruby-identifier">list_contas</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-node">&quot;/users/#{conta_id}&quot;</span>))
+  <span class="ruby-identifier">rtn</span> = []
+  <span class="ruby-identifier">list_contas</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">u_map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">user</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">u_map</span>)
+    <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">user</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rtn</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

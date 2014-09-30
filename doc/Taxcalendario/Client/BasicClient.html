@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Taxcalendario::Client::BasicClient - RDoc Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add">#add</a>
+    
+    <li ><a href="#method-i-delete">#delete</a>
+    
+    <li ><a href="#method-i-delete_and_give_me_a_json">#delete_and_give_me_a_json</a>
+    
+    <li ><a href="#method-i-get">#get</a>
+    
+    <li ><a href="#method-i-get_and_give_me_a_json">#get_and_give_me_a_json</a>
+    
+    <li ><a href="#method-i-list">#list</a>
+    
+    <li ><a href="#method-i-new_entity">#new_entity</a>
+    
+    <li ><a href="#method-i-post_and_give_me_a_json">#post_and_give_me_a_json</a>
+    
+    <li ><a href="#method-i-put_and_give_me_a_json">#put_and_give_me_a_json</a>
+    
+    <li ><a href="#method-i-trata_erro">#trata_erro</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Taxcalendario::Client::BasicClient">
+  <h1 id="class-Taxcalendario::Client::BasicClient" class="class">
+    class Taxcalendario::Client::BasicClient
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-access_token" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">access_token</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-base_url" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base_url</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-http_client" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">http_client</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-service_base_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">service_base_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constructor</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">base_url</span> = <span class="ruby-string">&quot;http://localhost:3000/api/v1&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_token</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span> = <span class="ruby-constant">HTTPClient</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(entity)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a register</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">entity</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-identifier">httpresp</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}.json?api_key=#{self.access_token}&quot;</span>, <span class="ruby-identifier">params</span>
+  <span class="ruby-identifier">json</span> = <span class="ruby-identifier">httpresp</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-identifier">ne</span> = <span class="ruby-identifier">new_entity</span>
+  <span class="ruby-identifier">ne</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>))
+  <span class="ruby-identifier">ne</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(entity)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a register</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">httpresp</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}.json?id=#{entity.id}&amp;api_key=#{self.access_token}&quot;</span>
+  <span class="ruby-identifier">json</span> = <span class="ruby-identifier">httpresp</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_and_give_me_a_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_and_give_me_a_json</span><span
+            class="method-args">(additional_path, params = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get path and return a json</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_and_give_me_a_json-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_and_give_me_a_json</span>(<span class="ruby-identifier">additional_path</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">params</span>[<span class="ruby-value">:api_key</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_token</span>
+    <span class="ruby-identifier">message</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/#{additional_path}.json&quot;</span>, <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">message</span>.<span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get entity by id</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">json</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">get_content</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/#{id}.json&quot;</span>, <span class="ruby-value">:api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_token</span>
+  <span class="ruby-identifier">ne</span> = <span class="ruby-identifier">new_entity</span>
+  <span class="ruby-identifier">ne</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)))
+  <span class="ruby-identifier">ne</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_and_give_me_a_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_and_give_me_a_json</span><span
+            class="method-args">(additional_path, params = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get path and return a json</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_and_give_me_a_json-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_and_give_me_a_json</span>(<span class="ruby-identifier">additional_path</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">params</span>[<span class="ruby-value">:api_key</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_token</span>
+    <span class="ruby-identifier">json</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">get_content</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/#{additional_path}.json&quot;</span>, <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list</span><span
+            class="method-args">(params = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list</span>(<span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">params</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">params</span>[<span class="ruby-value">:api_key</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">access_token</span>
+    <span class="ruby-identifier">json</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">get_content</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/list.json&quot;</span>, <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+    <span class="ruby-identifier">rtn</span> = []
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">obj_hash</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">ne</span> = <span class="ruby-identifier">new_entity</span>
+      <span class="ruby-identifier">ne</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-identifier">obj_hash</span>)
+      <span class="ruby-identifier">rtn</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ne</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">rtn</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_entity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_entity</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>New entity. Override this in children classes.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_entity-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_entity</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-post_and_give_me_a_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post_and_give_me_a_json</span><span
+            class="method-args">(additional_path, entity)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Post in path and return a json</p>
+          
+          
+
+          
+          <div class="method-source-code" id="post_and_give_me_a_json-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post_and_give_me_a_json</span>(<span class="ruby-identifier">additional_path</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">message</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}&quot;</span>, <span class="ruby-identifier">entity</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">message</span>.<span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-put_and_give_me_a_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put_and_give_me_a_json</span><span
+            class="method-args">(additional_path, entity)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Put in path and return a json</p>
+          
+          
+
+          
+          <div class="method-source-code" id="put_and_give_me_a_json-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put_and_give_me_a_json</span>(<span class="ruby-identifier">additional_path</span>, <span class="ruby-identifier">entity</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">service_base_path</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">message</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">put</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}&quot;</span>, <span class="ruby-identifier">entity</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">message</span>.<span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trata_erro" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trata_erro</span><span
+            class="method-args">(json)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trata_erro-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\&quot;error\&quot;:&quot;</span>)
+    <span class="ruby-identifier">em</span> = <span class="ruby-constant">Taxcalendario</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Entities</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorMessage</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">em</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>))
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">em</span>.<span class="ruby-identifier">error</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">json</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(entity)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a register</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/taxcalendario/baseclient.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">entity</span>)
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">entity</span>.<span class="ruby-identifier">to_hash</span>
+  <span class="ruby-identifier">httpresp</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_client</span>.<span class="ruby-identifier">put</span> <span class="ruby-node">&quot;#{self.base_url}#{self.service_base_path}.json?api_key=#{self.access_token}&quot;</span>, <span class="ruby-identifier">params</span>
+  <span class="ruby-identifier">json</span> = <span class="ruby-identifier">httpresp</span>.<span class="ruby-identifier">content</span>
+  <span class="ruby-identifier">trata_erro</span>(<span class="ruby-identifier">json</span>)
+  <span class="ruby-identifier">ne</span> = <span class="ruby-identifier">new_entity</span>
+  <span class="ruby-identifier">ne</span>.<span class="ruby-identifier">from_hash</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>))
+  <span class="ruby-identifier">ne</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,21 @@
+Tue, 30 Sep 2014 00:25:10 -0300
+./Gemfile	Sun, 28 Sep 2014 18:25:20 -0300
+./Rakefile	Sat, 27 Sep 2014 23:34:52 -0300
+./LICENSE.txt	Sat, 27 Sep 2014 23:34:52 -0300
+./README.md	Sat, 27 Sep 2014 23:34:52 -0300
+./lib/taxcalendario/client/version.rb	Mon, 29 Sep 2014 15:29:43 -0300
+./lib/taxcalendario/baseclient.rb	Mon, 29 Sep 2014 14:44:39 -0300
+./lib/taxcalendario/entities.rb	Mon, 29 Sep 2014 22:23:22 -0300
+./lib/taxcalendario/client.rb	Mon, 29 Sep 2014 22:43:19 -0300
+./nbproject/project.xml	Sun, 28 Sep 2014 00:12:48 -0300
+./nbproject/private/private.properties	Sun, 28 Sep 2014 00:12:48 -0300
+./nbproject/private/config.properties	Sun, 28 Sep 2014 00:12:48 -0300
+./nbproject/private/private.xml	Mon, 29 Sep 2014 01:39:36 -0300
+./nbproject/private/rake-d.txt	Mon, 29 Sep 2014 12:32:42 -0300
+./nbproject/project.properties	Sun, 28 Sep 2014 00:12:48 -0300
+./Gemfile.lock	Mon, 29 Sep 2014 22:55:59 -0300
+./spec/users_spec.rb	Mon, 29 Sep 2014 15:25:56 -0300
+./spec/support/factory_girl.rb	Mon, 29 Sep 2014 23:04:59 -0300
+./spec/obrigacoes_spec.rb	Mon, 29 Sep 2014 23:46:22 -0300
+./spec/contas_spec.rb	Tue, 30 Sep 2014 00:23:22 -0300
+./calendario-gem.gemspec	Mon, 29 Sep 2014 16:07:16 -0300
