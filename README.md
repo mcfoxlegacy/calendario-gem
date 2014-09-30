@@ -36,4 +36,5 @@ O RDoc se encontra no diretório "doc". Lá é possível ver todas as classes cl
 
 ## Testes
 
-Para executar os testes, copie o arquivo spec/test_template.yml para spec/test.yml
+Para executar os testes, copie o arquivo spec/test_template.yml para spec/test.yml e execute rspec.
+
