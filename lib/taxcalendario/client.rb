@@ -216,22 +216,43 @@ module Taxcalendario
       
       # Lista entregas
       def list_entregas(conta_id, estabelecimento_id, obrigacao_id)
-        
+        list = JSON.parse(get_and_give_me_a_json("/estabelecimentos/entregas/#{conta_id}/#{estabelecimento_id}/#{obrigacao_id}"))
+        rtn = []
+        list.each do |map|
+          obj = Taxcalendario::Client::Entities::Entrega.new
+          obj.from_hash(map)
+          rtn << obj
+        end
+        rtn
       end
       
       # Pega entrega por id
       def get_entrega(conta_id, entrega_id)
-        
+        map = JSON.parse(get_and_give_me_a_json("/estabelecimentos/entregas/#{conta_id}/#{entrega_id}"))
+        obj = Taxcalendario::Client::Entities::Entrega.new
+        obj.from_hash(map)
+        obj
+      end
+      
+      # Adiciona entrega
+      def add_entrega(conta_id, entrega)
+        map = JSON.parse(post_and_give_me_a_json("/estabelecimentos/entregas/#{conta_id}/#{entrega.estabelecimento_id}", entrega))
+        obj = Taxcalendario::Client::Entities::Entrega.new
+        obj.from_hash(map)
+        obj
       end
       
       # Atualiza entrega
-      def update_entrega(conta_id, estabelecimento)
-        
+      def update_entrega(conta_id, entrega)
+        map = JSON.parse(put_and_give_me_a_json("/estabelecimentos/entregas/#{conta_id}/#{entrega.estabelecimento_id}", entrega))
+        obj = Taxcalendario::Client::Entities::Entrega.new
+        obj.from_hash(map)
+        obj
       end
       
       # Deleta entrega
-      def delete_entrega(entrega_id)
-        
+      def delete_entrega(conta_id, entrega_id)
+        delete_and_give_me_a_json("/estabelecimentos/entregas/#{conta_id}/#{entrega_id}")
       end
       
       # Adiciona um arquivo a uma entrega
