@@ -53,6 +53,13 @@ FactoryGirl.define do
       mei               false
   end
   
+  # Factory of Responsabilidade entity
+  factory :responsabilidade, class: Taxcalendario::Client::Entities::Responsabilidade do
+      dt_inicio         "2012-01-01"
+      dt_fim            "2025-01-01"
+      responsabilidade  "Texto da responsabilidade"
+  end
+  
     # Factory of Establishment entity
   factory :obrigacao, class: Taxcalendario::Client::Entities::Obrigacao do  
       nome                              "Nome da obrigacao"

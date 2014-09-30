@@ -44,6 +44,18 @@ module Taxcalendario
         attr_accessor :invited_by_type
         attr_accessor :invitations_count
       end
+
+      class Responsabilidade < BaseEntity      
+        attr_accessor :id
+        attr_accessor :estabelecimento_id
+        attr_accessor :obrigacao_id
+        attr_accessor :user_id
+        attr_accessor :dt_inicio
+        attr_accessor :dt_fim
+        attr_accessor :responsabilidade
+        attr_accessor :created_at
+        attr_accessor :updated_at
+      end
       
       # Conta
       class Conta <  BaseEntity
