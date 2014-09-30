@@ -5,17 +5,17 @@ FactoryGirl.define do
   
   # Factory of User API client
   factory :user_service, class: Taxcalendario::Client::UserService do
-    access_token "6f509af40805825a088a5972b2775492 " 
+    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
   end
   
   # Factory of Obrigacao API client
   factory :obrigacao_service, class: Taxcalendario::Client::ObrigacaoService do
-    access_token "6f509af40805825a088a5972b2775492 " 
+    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
   end
   
   # Factory of Account API client
   factory :conta_service, class: Taxcalendario::Client::ContaService do
-    access_token "6f509af40805825a088a5972b2775492 " 
+    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
   end
   
   # Factory of User entity
@@ -24,6 +24,13 @@ FactoryGirl.define do
     name  "Teste RSpec"
     password "testerspec2015"
     role  2
+  end
+  
+  # Factory of Entrega entity
+  factory :entrega, class: Taxcalendario::Client::Entities::Entrega do
+     competencia  "ABCDEFGH"
+     dt_prevista  "2014-06-04"
+     dt_entrega   "2014-07-04"
   end
   
   # Factory of Establishment entity

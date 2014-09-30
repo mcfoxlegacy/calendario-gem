@@ -181,6 +181,18 @@ module Taxcalendario
       end
       
       # Retorna estabelecimentos
+      def estabelecimentos_by_cnpj(conta_id, cnpj)
+        list = JSON.parse(get_and_give_me_a_json("/estabelecimentos/#{conta_id}", {:cnpj => cnpj}))
+        rtn = []
+        list.each do |map|
+          obj = Taxcalendario::Client::Entities::Estabelecimento.new
+          obj.from_hash(map)
+          rtn << obj
+        end
+        rtn
+      end
+      
+      # Retorna estabelecimentos
       def estabelecimentos(conta_id)
         list = JSON.parse(get_and_give_me_a_json("/estabelecimentos/#{conta_id}"))
         rtn = []

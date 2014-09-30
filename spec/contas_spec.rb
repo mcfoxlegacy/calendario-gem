@@ -9,14 +9,14 @@ end
 
 describe "Accounts service API Client" do
   
-  it "shoud return a list of accounts" do
+  it "should return a list of accounts" do
     contaapi = build(:conta_service)
     lc = contaapi.list
     expect(lc[0].responsavel_user_id).not_to eq (nil)
     expect(lc[0].responsavel_user_id).to be > 0 
   end
   
-  it "shoud return a register by account id" do
+  it "should return a register by account id" do
     contaapi = build(:conta_service)
     lc = contaapi.list
     expect(contaapi.get(lc[0].id).id).to be > 0
@@ -35,7 +35,7 @@ describe "Accounts service API Client" do
     expect(ok).to eq (true)
   end
   
-  it "shoud create an user and add to account" do
+  it "should create an user and add to account" do
     userapi = build(:user_service)
     contaapi = build(:conta_service)
     
@@ -74,7 +74,7 @@ describe "Accounts service API Client" do
     expect(retorno.mei).to eq (true)
   end
     
-  it "shoud create an obrigacao" do
+  it "should create an obrigacao" do
     obrigacaoapi = build(:obrigacao_service)
     obrigacao = build(:obrigacao)
     no = obrigacaoapi.add(obrigacao)
@@ -135,10 +135,12 @@ describe "Accounts service API Client" do
     expect(retorno).to eq (true)
   end
   
-  it "shoud delete the previosly created obrigacao" do
+  it "should delete the previosly created obrigacao" do
     obrigacaoapi = build(:obrigacao_service)
     list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
-    obrigacaoapi.delete(list_obrigacaos[0])
+    list_obrigacaos.each do |ob|
+      obrigacaoapi.delete(ob)
+    end
     list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
     expect(list_obrigacaos.empty?).to eq (true)
   end
@@ -155,6 +157,79 @@ describe "Accounts service API Client" do
       end
     end
     expect(retorno).to eq (true)
+  end
+  
+  it "should create a delivery on establishment" do
+    contaapi = build(:conta_service)
+    entrega  = build(:entrega)
+    userapi = build(:user_service)
+    obrigacaoapi = build(:obrigacao_service)
+    
+    conta_id = userapi.contas[0].id
+    user_id = userapi.meu_id
+    
+    estabelecimento = build(:estabelecimento)
+    estabelecimento.conta_id = conta_id
+    estabelecimento = contaapi.add_estabelecimento(estabelecimento)
+    
+    obrigacao = build(:obrigacao)
+    obrigacao = obrigacaoapi.add(obrigacao)
+    
+    entrega.estabelecimento_id = estabelecimento.id
+    entrega.conta_id = conta_id
+    entrega.obrigacao_id = obrigacao.id
+    entrega.user_id = user_id
+    
+    ne = contaapi.add_entrega(conta_id,entrega)
+    
+    expect(ne.id).not_to eq (nil)
+  end
+  
+  it "should list and update a delivery on establishment" do
+    contaapi = build(:conta_service)
+    entrega  = build(:entrega)
+    userapi = build(:user_service)
+    obrigacaoapi = build(:obrigacao_service)
+    
+    conta_id = userapi.contas[0].id
+    user_id = userapi.meu_id
+    obrigacao = build(:obrigacao)
+    estabelecimento = build(:estabelecimento)
+    estabelecimento = contaapi.estabelecimentos_by_cnpj(conta_id, estabelecimento.cnpj)[0]
+    obrigacao = obrigacaoapi.list_by_nome(obrigacao.nome)[0]
+    
+    contaapi.list_entregas(conta_id, estabelecimento.id, obrigacao.id).each do |ent|
+      if ent.competencia == entrega.competencia
+        ent.competencia = "ABCDEFGL"
+        entrega = contaapi.update_entrega(conta_id, ent)
+        break
+      end
+    end
+    expect(entrega.competencia).to eq ("ABCDEFGL")
+  end
+  
+  it "should delete a delivery on establishment" do
+    contaapi = build(:conta_service)
+    entrega  = build(:entrega)
+    userapi = build(:user_service)
+    obrigacaoapi = build(:obrigacao_service)
+    
+    conta_id = userapi.contas[0].id
+    user_id = userapi.meu_id
+    obrigacao = build(:obrigacao)
+    estabelecimento = build(:estabelecimento)
+    estabelecimento = contaapi.estabelecimentos_by_cnpj(conta_id, estabelecimento.cnpj)[0]
+    obrigacao = obrigacaoapi.list_by_nome(obrigacao.nome)[0]
+    
+    contaapi.list_entregas(conta_id, estabelecimento.id, obrigacao.id).each do |ent|
+        contaapi.delete_entrega(conta_id, ent.id)
+    end
+    
+    expect(contaapi.list_entregas(conta_id, estabelecimento.id, obrigacao.id).empty?).to eq (true)
+    
+    contaapi.delete_estabelecimento(estabelecimento)
+    obrigacaoapi.delete(obrigacao)
+    
   end
   
 end

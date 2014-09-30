@@ -28,7 +28,9 @@ describe "Obrigacao service API Client" do
   it "shoud delete the previosly created obrigacao" do
     obrigacaoapi = build(:obrigacao_service)
     list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
-    obrigacaoapi.delete(list_obrigacaos[0])
+    list_obrigacaos.each do |ob|
+      obrigacaoapi.delete(ob)
+    end
     list_obrigacaos = obrigacaoapi.list_by_nome(build(:obrigacao).nome)
     expect(list_obrigacaos.empty?).to eq (true)
   end
