@@ -6,17 +6,20 @@ FactoryGirl.define do
   
   # Factory of User API client
   factory :user_service, class: Taxcalendario::Client::UserService do
-    access_token YAML::load(File.read("spec/token.yml"))[:token]
+    access_token YAML::load(File.read("spec/test.yml"))[:token]
+    base_url YAML::load(File.read("spec/test.yml"))[:base_url]
   end
   
   # Factory of Obrigacao API client
   factory :obrigacao_service, class: Taxcalendario::Client::ObrigacaoService do
-    access_token YAML::load(File.read("spec/token.yml"))[:token] 
+    access_token YAML::load(File.read("spec/test.yml"))[:token] 
+    base_url YAML::load(File.read("spec/test.yml"))[:base_url]
   end
   
   # Factory of Account API client
   factory :conta_service, class: Taxcalendario::Client::ContaService do
-    access_token YAML::load(File.read("spec/token.yml"))[:token]
+    access_token YAML::load(File.read("spec/test.yml"))[:token]
+    base_url YAML::load(File.read("spec/test.yml"))[:base_url]
   end
   
   # Factory of User entity

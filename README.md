@@ -32,3 +32,6 @@ end
 
 O RDoc se encontra no diretório "doc". Lá é possível ver todas as classes clientes e suas entidades.
 
+## Testes
+
+Para executar os testes, copie o arquivo spec/test_template.yml para spec/test.yml

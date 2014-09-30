@@ -9,7 +9,7 @@ module Taxcalendario
       
       # Constructor
       def initialize
-        self.base_url = "http://localhost:3000/api/v1"
+        self.base_url = nil
         self.access_token = nil
         self.http_client = HTTPClient.new
       end

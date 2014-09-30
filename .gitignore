@@ -10,7 +10,7 @@
 *.so
 *.o
 *.a
-token.yml
+test.yml
 mkmf.log
 /nbproject/private/
 /nbproject
