@@ -128,17 +128,27 @@ module Taxcalendario
       
       # Adiciona uma responsabilidade
       def add_responsabilidade(conta_id, estabelecimento_id, responsabilidade)
-        
+        map = JSON.parse(post_and_give_me_a_json("/estabelecimentos/responsabilidades/#{conta_id}/#{estabelecimento_id}",responsabilidade))     
+        obj = Taxcalendario::Client::Entities::Responsabilidade.new
+        obj.from_hash(map)
+        obj
       end
       
       # Remove uma responsabilidade
       def delete_responsabilidade(conta_id, estabelecimento_id, user_id, obrigacao_id)
-        
+        delete_and_give_me_a_json("/estabelecimentos/responsabilidades/#{conta_id}/#{estabelecimento_id}/#{user_id}/#{obrigacao_id}")
       end
       
       # Responsabilidades registradas em um estabelecimento
       def responsabilidades_estabelecimento(conta_id, estabelecimento_id, user_id)
-        
+        list_resp = JSON.parse(get_and_give_me_a_json("/estabelecimentos/responsabilidades/#{conta_id}/#{estabelecimento_id}/#{user_id}"))
+        rtn = []
+        list_resp.each do |u_map|
+          resp = Taxcalendario::Client::Entities::Responsabilidade.new
+          resp.from_hash(u_map)
+          rtn << resp
+        end
+        rtn
       end
       
       # Lista todas as obrigacoes de um estabelecimento

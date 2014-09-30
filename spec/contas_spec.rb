@@ -96,6 +96,45 @@ describe "Accounts service API Client" do
     expect(retorno.id).not_to eq (nil)
   end
   
+  it "should add an responsabilidade on establishment" do
+    obrigacaoapi = build(:obrigacao_service)
+    obrigacao_id = obrigacaoapi.list_by_nome(build(:obrigacao).nome)[0].id
+        
+    contaapi = build(:conta_service)
+    conta_id = contaapi.list[0].id
+    estabelecimento_id = contaapi.estabelecimentos(conta_id)[0].id
+    
+    userapi = build(:user_service)  
+    user_id = userapi.meu_id
+    
+    responsabilidade = build(:responsabilidade)
+    responsabilidade.estabelecimento_id = estabelecimento_id
+    responsabilidade.obrigacao_id = obrigacao_id
+    responsabilidade.user_id = user_id
+    
+    
+    retorno = contaapi.add_responsabilidade(conta_id, estabelecimento_id, responsabilidade)
+    expect(retorno.id).not_to eq (nil)
+  end
+  
+  it "should list and delete responsabilidade on establishment" do   
+    contaapi = build(:conta_service)
+    conta_id = contaapi.list[0].id
+    estabelecimento_id = contaapi.estabelecimentos(conta_id)[0].id
+    
+    userapi = build(:user_service)  
+    user_id = userapi.meu_id
+    
+    contaapi.responsabilidades_estabelecimento(conta_id, estabelecimento_id, user_id).each do |resp|  
+      if (resp.estabelecimento_id == estabelecimento_id and resp.user_id = user_id)
+        contaapi.delete_responsabilidade(conta_id, resp.estabelecimento_id, resp.user_id, resp.obrigacao_id)
+        break
+      end
+    end
+    lista_resp = contaapi.responsabilidades_estabelecimento(conta_id, estabelecimento_id, user_id)
+    expect(lista_resp.empty?).to eq (true)
+  end
+  
   it "should list and update the previosly created obrigacao" do
     contaapi = build(:conta_service)
     obrigacaoservice = build(:obrigacao_service)
