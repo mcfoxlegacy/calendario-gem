@@ -1,21 +1,22 @@
 require 'taxcalendario/entities'
 require 'taxcalendario/client'
+require 'yaml'
 
 FactoryGirl.define do
   
   # Factory of User API client
   factory :user_service, class: Taxcalendario::Client::UserService do
-    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
+    access_token YAML::load(File.read("spec/token.yml"))[:token]
   end
   
   # Factory of Obrigacao API client
   factory :obrigacao_service, class: Taxcalendario::Client::ObrigacaoService do
-    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
+    access_token YAML::load(File.read("spec/token.yml"))[:token] 
   end
   
   # Factory of Account API client
   factory :conta_service, class: Taxcalendario::Client::ContaService do
-    access_token "5bca3fb811728b1da47f2dc0167bec3d " 
+    access_token YAML::load(File.read("spec/token.yml"))[:token]
   end
   
   # Factory of User entity

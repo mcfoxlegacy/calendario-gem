@@ -1,31 +1,34 @@
 # Taxcalendario::Client
 
-TODO: Write a gem description
+Client da API do Taxweb Calendario.
 
-## Installation
+## Instalação
 
-Add this line to your application's Gemfile:
+Adicione a linha a seguir no seu Gemfile:
 
 ```ruby
-gem 'taxcalendario-client'
+gem 'calendario-gem'
 ```
 
-And then execute:
+A seguir, execute:
 
-    $ bundle
+    $ bundle install
 
-Or install it yourself as:
+Ou instale manualmente com o comando:
 
-    $ gem install taxcalendario-client
+    $ gem install calendario-gem
 
-## Usage
+## Exemplo de uso
 
-TODO: Write usage instructions here
+require 'taxcalendario/client'
 
-## Contributing
+user_api = Taxcalendario::Client::UserService.new
+user_api.access_token = "COLOQUE_AQUI_SEU_TOKEN"
+user_api.contas.each do |conta|
+    puts conta.nome
+end
 
-1. Fork it ( https://github.com/[my-github-username]/taxcalendario-client/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+## Documentação
+
+O RDoc se encontra no diretório "doc". Lá é possível ver todas as classes clientes e suas entidades.
+
