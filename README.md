@@ -37,4 +37,5 @@ O RDoc se encontra no diretório "doc". Lá é possível ver todas as classes cl
 ## Testes
 
 Para executar os testes, copie o arquivo spec/test_template.yml para spec/test.yml e execute rspec.
+Execute os testes em um DUMP de producao. Como a API nao possui rotinas administrativas, estabelecimentos com entregas e obrigacoes, sao necessarios para a execucao.
 

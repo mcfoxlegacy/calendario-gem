@@ -50,6 +50,7 @@ module Taxcalendario
         if json.include?("\"error\":")
           em = Taxcalendario::Client::Entities::ErrorMessage.new
           em.from_hash(JSON.parse(json))
+          #puts json
           raise em.error
         else
           json
@@ -81,8 +82,14 @@ module Taxcalendario
           if params == nil
             params = Hash.new
           end
+          
+          additional = ""
+          if additional_path != nil
+            additional = "/#{additional_path}"
+          end
+          
           params[:api_key] = self.access_token
-          json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}/#{additional_path}.json", params
+          json = self.http_client.get_content "#{self.base_url}#{self.service_base_path}#{additional}.json", params
           trata_erro(json)
         end
       end
@@ -100,9 +107,31 @@ module Taxcalendario
       end
       
       # Post in path and return a json
-      def post_and_give_me_a_json(additional_path, entity)
+      def post_and_give_me_a_json(additional_path, entity = nil)
         if self.service_base_path != nil
-          message = self.http_client.post "#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}", entity.to_hash
+          
+          additional = ""
+          if additional_path != nil
+            additional = "/#{additional_path}"
+          end
+          
+          if entity != nil
+            message = self.http_client.post "#{self.base_url}#{self.service_base_path}#{additional}.json?api_key=#{self.access_token}", entity.to_hash
+          else
+            message = self.http_client.post "#{self.base_url}#{self.service_base_path}#{additional}.json?api_key=#{self.access_token}"
+           end
+          trata_erro(message.content)
+        end
+      end
+      
+      # Upload a file and return a json
+      def post_file_and_give_me_a_json(additional_path, file_path)
+        if self.service_base_path != nil
+          message = "{error: \"File not found.\"}"
+          File.open(file_path) do |file|
+            body = { 'arquivo' => file }
+            message = self.http_client.post "#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}", body
+          end
           trata_erro(message.content)
         end
       end
@@ -110,7 +139,13 @@ module Taxcalendario
       # Put in path and return a json
       def put_and_give_me_a_json(additional_path, entity)
         if self.service_base_path != nil
-          message = self.http_client.put "#{self.base_url}#{self.service_base_path}/#{additional_path}.json?api_key=#{self.access_token}", entity.to_hash
+          
+          additional = ""
+          if additional_path != nil
+            additional = "/#{additional_path}"
+          end
+          
+          message = self.http_client.put "#{self.base_url}#{self.service_base_path}#{additional}.json?api_key=#{self.access_token}", entity.to_hash
           trata_erro(message.content)
         end
       end
