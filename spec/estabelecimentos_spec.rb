@@ -165,4 +165,30 @@ describe "Establishment service API Client" do
     expect(ok).not_to eq (false)
   end
   
+  it "should mark delivery as generated" do
+    estapi = build(:estabelecimento_service)
+    
+    lc = estapi.lista
+    ok = false
+    dt_inicio = Time.now
+    dt_fim = Time.now + (31 * 24 * 60 * 60)
+    lc.each do |est|
+      lst = estapi.entregas_por_obrigacao(est.id, "DCTF", dt_inicio, dt_fim)
+      nome = lst[0].obrigacao.nome
+      geradas = estapi.marca_entregas_geradas(est.id, nome, Time.parse(lst[0].dt_prevista))
+      geradas.each do |gerada|
+        if gerada.obrigacao_gerada 
+          ok = true
+          break
+        end
+      end
+      
+      if(ok)
+        break
+      end
+    end
+    
+    expect(ok).not_to eq (false)
+  end
+  
 end

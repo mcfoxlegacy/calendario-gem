@@ -133,6 +133,7 @@ module Taxcalendario
       end
       
       def remove_obrigacao(id, obrig_nome)
+        nome = URI.encode_www_form_component(nome)
         map = JSON.parse(delete_and_give_me_a_json("/#{id}/obrigacoes/#{obrig_nome}"))
         rtn = map["message"].include?("sucesso")
         rtn
@@ -156,8 +157,26 @@ module Taxcalendario
       
       def entregas_por_obrigacao(id, nome, dt_inicio, dt_fim)
         if id != nil && dt_inicio != nil && dt_inicio.class.name == "Time" && dt_fim != nil && dt_fim.class.name == "Time"
+          nome = URI.encode_www_form_component(nome)
           params = {:dt_inicio => dt_inicio.strftime("%Y-%m-%d"), :dt_fim => dt_fim.strftime("%Y-%m-%d")}
           entregas = JSON.parse(get_and_give_me_a_json("/#{id}/obrigacoes/#{nome}/entregas",params))
+          rtn = []
+          entregas.each do |entrega|
+            ent = Taxcalendario::Client::Entities::Entrega.new
+            ent.from_hash(entrega)
+            rtn << ent
+          end
+          rtn
+        else
+          false
+        end
+      end
+      
+      def marca_entregas_geradas(id, nome, dt_prevista)
+        if id != nil && dt_prevista != nil && dt_prevista.class.name == "Time"
+          nome = URI.encode_www_form_component(nome)
+          params = {:dt_prevista => dt_prevista.strftime("%Y-%m-%d")}
+          entregas = JSON.parse(post_and_give_me_a_json("/#{id}/obrigacoes/#{nome}/entregas",params))
           rtn = []
           entregas.each do |entrega|
             ent = Taxcalendario::Client::Entities::Entrega.new
